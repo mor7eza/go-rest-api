@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	transportHTTP "github.com/mor7eza/go-rest-api/internal/transport/http"
+	transportHTTP "github.com/mor7eza/go-rest-api.git/internal/transport/http"
 )
 
 type App struct{}
@@ -12,7 +12,7 @@ type App struct{}
 func (app *App) Run() error {
 	fmt.Println("Running App")
 
-	handler := transportHTTP.NewHandler()
+	handler := transportHTTP.NewHanlder()
 	handler.SetupRoutes()
 
 	if err := http.ListenAndServe(":8080", handler.Router); err != nil {
